@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+}
+
+/* CSS External */
+
+/* Id Selector */
+
+/* id.class.element */
+
+/* 1.0.0 */
+#title {
+  color: red;
+}
+
+/* 0.1.0 */
+.title {
+  color: blue;
+}
+
+/* Class Selector */
+.paragraph {
+  color: red;
+}
+
+.paragraph {
+  color: blue;
+}
+
+/* Element Selector */
+
+/* 0.1.0 */
+.notice {
+  color: red;
+}
+
+/* 0.0.2 */
+p span {
+  color: blue;
+}
+
+/* 0.0.1 */
+span {
+  /* color: red; */
+}
+
+/* CSS Specificity - Độ ưu tiên */
+/* id > class > element */
+
+/* Selector cha con */
+
+p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+/* div p {
+  color: red;
+} */
+
+/* con trực tiếp */
+.parent > p {
+  margin-bottom: 20px;
+  color: red;
+}
+
+/* Chọn các thẻ p là anh em ngang cấp 
+mà đứng sau 1 thẻ p khác */
+
+/* .child p ~ p {
+  color: blue;
+} */
+
+/* Chọn các thẻ p là anh em ngang cấp 
+mà đứng ngay sau 1 thẻ p khác */
+.child p + p {
+  color: blue;
+}
+
+p.text-red {
+  color: red;
+}
+
+/* Pseudo-class selector */
+.box {
+  width: 200px;
+  height: 200px;
+
+  border: 1px solid red;
+}
+
+/* trạng thái */
+.box:hover {
+  background-color: blue;
+}
+/* 
+.fruit-list li:first-child {
+  color: red;
+}
+
+.fruit-list li:last-child {
+  color: blue;
+} */
+
+/* .fruit-list li:nth-child(2) {
+  color: red;
+}
+
+.fruit-list li:nth-child(3) {
+  color: blue;
+} */
+
+.fruit-list {
+  margin-top: 20px;
+}
+
+.fruit-list li:nth-child(n + 2) {
+  /* color: red;
+  margin-top: 10px; */
+}
+
+.fruit-list li:not(:has(span)) {
+  color: red;
+}
+
+input[type="text"] {
+  color: red;
+}
+
+/* chọn thẻ a có href chứa 1 ký tự nào đó */
+a[href*="c"] {
+  color: aqua;
+}
+
+/* chọn thẻ h3 có title bắt đầu bằng 1 từ nào đó */
+h3[title~="title"] {
+  color: blueviolet;
+}
+
+/* chọn thẻ a có href bắt đầu bằng ký tự nào đó */
+a[href^="www"] {
+  color: red;
+}
+

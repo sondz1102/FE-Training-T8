@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 03: CSS Selectors</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <!-- CSS Internal -->
+  <style>
+    /* h2 {
+      color: blue;
+    } */
+  </style>
+
+  <body>
+    <main>
+      <section class="section">
+        <!-- CSS Inline -->
+        <!-- <h2 style="color: blue;width: 200px;height: 200px;display: flex;">Tiêu đề</h2> -->
+        <h2 id="title" class="title" style="color: black">Tiêu đề</h2>
+
+        <p class="paragraph">This is p tag</p>
+
+        <p>
+          <span class="notice">This is span tag</span>
+        </p>
+      </section>
+
+      <section>
+        <h2>Selector cha con</h2>
+
+        <div class="parent">
+          <p>Child Element Hero</p>
+
+          <div class="child">
+            <p>Child Element 1</p>
+            <p>Child Element 2</p>
+            <p>Child Element 3</p>
+
+            <div>This is div tag</div>
+
+            <p>Child Element 4</p>
+            <div>This is div tag</div>
+            <p>Child Element 5</p>
+
+            <div>
+              <p>Child Element 6</p>
+              <p>Child Element 7</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="text text-red">Child Element 1</p>
+        <p class="text-red">Child Element 2</p>
+        <p class="text">Child Element 3</p>
+
+        <div class="box"></div>
+
+        <ul class="fruit-list">
+          <li>
+            <span>Fruit List</span>
+          </li>
+
+          <li>Apple</li>
+          <li>Orange</li>
+          <li>Cherry</li>
+          <li>Mango</li>
+          <li>Banana</li>
+        </ul>
+
+        <input type="text" />
+        <a href="https://google.com">Google</a>
+        <a href="www://.com">Google</a>
+
+        <h3 title="title đề cấp 3 Tiêu đề cấp 3 Tiêu đề cấp 3 Tiêu đề cấp 3">
+          Tiêu đề cấp 3...
+        </h3>
+      </section>
+    </main>
+  </body>
+</html>

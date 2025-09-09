@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 01: HTML BASE</title>
+  </head>
+
+  <!-- Semantic HTML: Ngữ nghĩa -->
+  <!-- SEO -->
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+  <body>
+    <div>
+      <header>Header</header>
+
+      <main>
+        <section id="close-tag" class="section-1">
+          <h2>Các thẻ đóng</h2>
+
+          <!-- ALT + SHIFT + F -->
+          <img
+            src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+            alt="This is Image"
+            width="50%"
+          />
+
+          <p style="color: red; background-color: blue" title="">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />At
+            iusto dolorem, obcaecati sunt repudiandae nulla reiciendis
+            dignissimos odio quod deserunt nisi quis. Officiis excepturi iure
+            consectetur similique harum, esse laborum!
+          </p>
+
+          <hr />
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />At
+            iusto dolorem, obcaecati sunt repudiandae nulla reiciendis
+            dignissimos odio quod deserunt nisi quis. Officiis excepturi iure
+            consectetur similique harum, esse laborum!
+          </p>
+        </section>
+
+        <div class="section-2" id="most-html">
+          <h1>Các thẻ HTML hay dùng</h1>
+
+          <!-- SHIFT + ALT + DOWN -->
+          <!-- CTRL + D -->
+          <!-- CTRL + ALT + DOWN -->
+          <!-- CTRL + SHIFT + LEFT/RIGHT -->
+          <!-- SHIFT + LEFT/RIGHT -->
+          <!-- CTRL + SHIFT + L -->
+
+          <h1 title="Tiêu đề cấp 1">Tiêu đề chính</h1>
+          <h2>Tiêu đề cấp 2</h2>
+          <h3>Tiêu đề cấp 3</h3>
+          <h4>Tiêu đề cấp 4</h4>
+          <h5>Tiêu đề cấp 5</h5>
+          <h6>Tiêu đề cấp 6</h6>
+
+          <button type="button" onclick="alert('Hello!')">Click me!</button>
+
+          <!-- HTML Attributes -->
+          <a href="https://google.com" target="_blank">Google</a>
+
+          <form>
+            <input type="text" placeholder="ex: examle@gmail.com" />
+            <br />
+            <input type="password" />
+            <br />
+            <button type="submit">Gửi</button>
+          </form>
+
+          <ul>
+            <li>Apple</li>
+            <li>Orange</li>
+            <li>Cherry</li>
+            <li>Banana</li>
+          </ul>
+
+          <ol>
+            <li>Apple</li>
+            <li>Orange</li>
+            <li>Cherry</li>
+            <li>Banana</li>
+          </ol>
+
+          <p>
+            Lorem ipsum dolor sit amet
+            <span style="color: red">consectetur</span> adipisicing elit.
+            Quibusdam laborum perspiciatis sapiente, aliquid facilis eum sequi
+            amet, eaque doloribus autem dolorum, sunt dolorem rerum consequuntur
+            omnis beatae ex rem ipsam?
+          </p>
+
+          <p>
+            <span>Tên: </span>
+            <span>Phan Minh Sơn</span>
+          </p>
+
+          <a href="#close-tag">Các thẻ đóng</a>
+          <a href="#">Back to top</a>
+        </div>
+
+        <section>
+          <h2>Relative & Absolute Path</h2>
+
+          <p>Đường dẫn tuyệt đối</p>
+          <img
+            src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+            alt="This is Image"
+            width="50%"
+          />
+
+          <p>Đường dẫn tương đối</p>
+          <img src="../images/img_demo.jpg" alt="Relative path" width="50%" />
+        </section>
+
+        <section>
+          <h2>Media</h2>
+
+          <p>Audio</p>
+          <audio controls>
+            <source src="../audios/audio.mp3" type="audio/mpeg" />
+          </audio>
+
+          <p>Video</p>
+
+          <video controls width="100%" autoplay muted>
+            <source src="../videos/video.mp4" type="video/mp4" />
+          </video>
+        </section>
+
+        <section>
+          <h2>Block & Inline Element</h2>
+
+          <p>Block</p>
+          <!-- div, p, section, ul, li -->
+          <!-- 1, Luôn chiếm 100% phần tử cha chứa nó -->
+          <!-- 2, Luôn xuất hiện ở 1 dòng mới -->
+          <!-- 3, Có thể thiết lập đầy đủ width, height, lề trong, lề ngoài -->
+
+          <div>
+            <p style="background-color: red">This is p tag 1</p>
+            <p style="background-color: red">This is p tag 2</p>
+          </div>
+
+          <div
+            style="
+              width: 200px;
+              height: 200px;
+              background-color: blueviolet;
+              padding: 20px;
+              margin: 20px;
+            "
+          >
+            This is div tag
+          </div>
+
+          <p>Inline</p>
+          <!-- span, img, a, strong, i -->
+          <!-- 1, Chỉ chiếm kích thước bằng chính nội dung của nó -->
+          <!-- 2, Thẻ inline sẽ nằm trên cùng 1 dòng -->
+          <!-- 3, Không thể thể thiết lập width, height, chỉ thiết lập được lề trái/phải, còn trên/dưới sẽ hoạt động không chính xacsf -->
+
+          <div>
+            <span style="background-color: blue">This is span tag 1</span>
+            <span style="background-color: blue">This is span tag 2</span>
+
+            <span
+              style="
+                display: inline-block;
+                width: 200px;
+                height: 200px;
+                background-color: blueviolet;
+                padding: 20px;
+              "
+              >This is span tag 2</span
+            >
+            <span
+              style="
+                display: inline-block;
+                width: 200px;
+                height: 200px;
+                background-color: blueviolet;
+                padding: 20px;
+              "
+              >This is span tag 2</span
+            >
+          </div>
+        </section>
+      </main>
+
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>

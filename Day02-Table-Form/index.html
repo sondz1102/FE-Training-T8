@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 02: Table & Form</title>
+  </head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid;
+      border-collapse: collapse;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h1>Table & Form</h1>
+    <section>
+      <h2>Table Basic</h2>
+      <table>
+        <!-- thead -->
+        <thead>
+          <!-- Table Row -->
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+
+        <script>
+          const users = [
+            {
+              name: "Tuấn Anh",
+              email: "tuananh@gmail.com",
+              phone: 456456456,
+              address: "Hà Nội",
+            },
+            {
+              name: "Hoàng Minh Phúc",
+              email: "minhphuc@gmail.com",
+              phone: 123123123,
+              address: "HCM",
+            },
+            {
+              name: "Hoàng Văn Giáp",
+              email: "hoanggiap@gmail.com",
+              phone: 456456456,
+              address: "Đà Nẵng",
+            },
+            {
+              name: "Ngọc Anh",
+              email: "ngocanh@gmail.com",
+              phone: 789789789,
+              address: "Thái Bình",
+            },
+            {
+              name: "Hạ Nguyễn Việt Anh",
+              email: "vietanh@gmail.com",
+              phone: 789789789,
+              address: "Thái Bình",
+            },
+          ];
+
+          function renderUsers(users) {
+            const tbody = document.getElementById("tbody");
+            if (!tbody) return;
+            let htmls = "";
+
+            users.forEach((user) => {
+              htmls += `
+               <tr>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.phone}</td>
+                <td>${user.address}</td>
+              </tr>
+              `;
+            });
+
+            tbody.innerHTML = htmls;
+          }
+
+          renderUsers(users);
+        </script>
+      </table>
+    </section>
+
+    <section>
+      <h2>Colspan</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td colspan="2">13</td>
+            <td>14</td>
+            <td>15</td>
+          </tr>
+        </tbody>
+
+        <!-- win + shift + s -->
+      </table>
+      <br />
+      <table>
+        <thead>
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td colspan="3">16</td>
+            <td>17</td>
+          </tr>
+          <tr>
+            <td colspan="2">20</td>
+            <td>21</td>
+            <td>22</td>
+          </tr>
+          <tr>
+            <td colspan="3">24</td>
+            <td>25</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Rowspan</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2">5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td rowspan="2">13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>18</td>
+            <td>20</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <table>
+        <thead>
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2">5</td>
+            <td>6</td>
+            <td rowspan="3">7</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td rowspan="2">9</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td rowspan="2">13</td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Form</h2>
+
+      <form>
+        <div>
+          <label for="username">User Name</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="ex: examle@gmail.com"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div>
+          <label for="phone">Phone</label>
+          <input type="number" id="phone" name="phone" required />
+        </div>
+
+        <div>
+          <label for="male">Male</label>
+          <input type="radio" id="male" name="gender" checked />
+        </div>
+
+        <div>
+          <label for="female">Female</label>
+          <input type="radio" id="female" name="gender" />
+        </div>
+
+        <div>
+          <input type="checkbox" id="agreement" name="aggreement" checked />
+          <span>Đồng ý với điều khoản</span>
+        </div>
+
+        <div>
+          <label for="female">Female</label>
+          <input type="date" id="date" name="date" />
+        </div>
+
+        <div>
+          <label for="price">Price</label>
+          <span>0</span>
+          <input type="range" id="price" name="price" />
+          <span>1000</span>
+        </div>
+
+        <div>
+          <label for="file">Female</label>
+          <input type="file" id="file" name="file" />
+        </div>
+
+        <div>
+          <select name="city">
+            <option value="">Chọn tỉnh thành</option>
+            <option value="HN">Hà Nội</option>
+            <option value="HCM">Hồ Chí Minh</option>
+            <option value="DN">Đà Nẵng</option>
+            <option value="DN">Đà Nẵng</option>
+            <option value="DN">Đà Nẵng</option>
+            <option value="DN">Đà Nẵng</option>
+            <option value="DN">Đà Nẵng</option>
+          </select>
+        </div>
+
+        <button type="submit">Gửi</button>
+      </form>
+    </section>
+
+    <script>
+      const formData = {
+        username: "",
+        password: "",
+        email: "",
+        phone: "",
+        gender: "",
+        argreement: false,
+      };
+
+      const userName = document.getElementById("username");
+      const agreement = document.getElementById("agreement");
+      console.log(agreement.checked);
+
+      console.log("User Name:", userName.value);
+
+      userName.addEventListener("input", (event) => {
+        const { value } = event.target;
+        formData.username = value;
+
+        console.log(value);
+        console.log(formData);
+      });
+    </script>
+  </body>
+</html>
