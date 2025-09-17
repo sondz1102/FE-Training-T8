@@ -13,11 +13,11 @@
   <body>
     <div class="wrap">
       <header class="header">
-        <a href="index.html">
+        <a href="index.html" class="logo">
           <img src="./images/logo.png" alt="NFT Marketplace" />
         </a>
 
-        <nav class="navigation">
+        <nav class="navigation js-navigation">
           <ul class="menu">
             <li class="menu-item">
               <a href="#" class="menu-link">Marketplace</a>
@@ -37,6 +37,10 @@
             <span class="btn-text">Sign Up</span>
           </button>
         </nav>
+
+        <button type="button" class="menu-btn js-menu-btn">
+          <img src="./images/icon_menu.png" alt="Menu Button" />
+        </button>
       </header>
 
       <main>
@@ -54,29 +58,31 @@
                   </p>
                 </div>
 
-                <div class="hero-button">
-                  <button class="btn btn-primary">
-                    <span class="btn-icon"
-                      ><img src="./images/icon_rocket_light.png" alt=""
-                    /></span>
-                    <span class="btn-text">Get Started</span>
-                  </button>
-                </div>
+                <div class="hero-content-wrap">
+                  <div class="hero-button">
+                    <button class="btn btn-primary">
+                      <span class="btn-icon"
+                        ><img src="./images/icon_rocket_light.png" alt=""
+                      /></span>
+                      <span class="btn-text">Get Started</span>
+                    </button>
+                  </div>
 
-                <ul class="additional-info-list">
-                  <li class="additional-info-item">
-                    <span class="value">240k+</span>
-                    <span class="label">Total Sale</span>
-                  </li>
-                  <li class="additional-info-item">
-                    <span class="value">100k+</span>
-                    <span class="label">Auctions</span>
-                  </li>
-                  <li class="additional-info-item">
-                    <span class="value">240k+</span>
-                    <span class="label">Artists</span>
-                  </li>
-                </ul>
+                  <ul class="additional-info-list">
+                    <li class="additional-info-item">
+                      <span class="value">240k+</span>
+                      <span class="label">Total Sale</span>
+                    </li>
+                    <li class="additional-info-item">
+                      <span class="value">100k+</span>
+                      <span class="label">Auctions</span>
+                    </li>
+                    <li class="additional-info-item">
+                      <span class="value">240k+</span>
+                      <span class="label">Artists</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
               <div class="hero-media">
                 <div class="hero-media-box">
@@ -429,7 +435,7 @@
           </div>
         </section>
 
-        <section class="section section-category">
+        <section class="section section-category" style="display: none">
           <div class="container">
             <div class="section-heading">
               <h2 class="section-title">Browse Categories</h2>
@@ -547,5 +553,26 @@
       </main>
       <footer>Footer</footer>
     </div>
+
+    <script>
+      const menuBtn = document.querySelector(".js-menu-btn");
+      const navigation = document.querySelector(".js-navigation");
+
+      menuBtn.addEventListener("click", function () {
+        navigation.classList.add("is-open");
+      });
+
+      document.addEventListener("click", function (event) {
+        const target = event.target;
+
+        if (
+          navigation.classList.contains("is-open") &&
+          !navigation.contains(target) &&
+          !menuBtn.contains(target)
+        ) {
+          navigation.classList.remove("is-open");
+        }
+      });
+    </script>
   </body>
 </html>
