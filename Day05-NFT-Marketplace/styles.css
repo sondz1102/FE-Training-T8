@@ -30,6 +30,8 @@
   --line-height-small: 1.2;
   --line-height-normal: 1.4;
   --line-height-medium: 1.6;
+
+  --base-radius: 20px;
 }
 
 body {
@@ -149,10 +151,58 @@ img {
 }
 
 .nft-info-title + .nft-info-box {
+  margin-top: 10px;
+}
+
+.nft-info-box {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.timer {
+  padding: 30px;
+  background: #3b3b3b80;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+}
+
+.timer-label,
+.timer-title {
+  font-family: var(--secondary-font);
+  font-size: 12px;
+}
+
+.timer-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   margin-top: 10px;
+}
+
+.timer-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.timer-item > *,
+.timer-box > span {
+  font-family: var(--secondary-font);
+  font-weight: var(--font-weight-bold);
+}
+
+.timer-title {
+  font-weight: var(--font-weight-normal);
+}
+
+.timer-value {
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.timer-box > span {
+  font-size: 28px;
 }
 
 /* Header */
@@ -342,8 +392,8 @@ img {
 }
 
 .creator-info {
-  text-align: center;
   margin-top: 20px;
+  text-align: center;
 }
 
 .creator-name {
@@ -392,10 +442,64 @@ img {
   font-size: 22px;
 }
 
-/* reakpoint */
+.section-highlight {
+  height: 640px;
+  padding: 60px 0;
+  /* background-image: url(./images/img_highlight.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+  background: url(./images/img_highlight.png) center/cover no-repeat;
+}
+
+.section-highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+}
+
+.highlight-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-width: 1110px;
+  padding-inline: 30px;
+  margin-inline: auto;
+  height: 100%;
+}
+
+.highlight-inner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.highlight-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.highlight-content .nft-info-box {
+  display: inline-flex;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: var(--gray-color-500);
+}
+
+.highlight-content .section-title {
+  font-size: 51px;
+  line-height: 1.1;
+}
+
+/* Breakpoint */
 
 /* Media queries */
-
 @media screen and (max-width: 1110px) {
   .logo {
     width: 182px;
@@ -544,9 +648,17 @@ img {
   }
 }
 
-
-@media screen and (max-width: 360px) { 
+@media screen and (max-width: 360px) {
   .creator-card {
     gap: 10px;
   }
+}
+
+/* Utility Class: Class tiện ích */
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
 }
