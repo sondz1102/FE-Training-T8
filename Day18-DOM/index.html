@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day18: DOM</title>
+
+    <style>
+      * {
+        padding: 0;
+      }
+      .todo-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .todo-text {
+        flex: 1;
+      }
+
+      .todo-item.is-completed .todo-text {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="main-title">Main title</h1>
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+
+    <p>This is p tag</p>
+    <p>This is p tag</p>
+
+    <select name="" id="select">
+      <option value="">Chọn</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+    </select>
+    <a href="https://google.com">Google</a>
+
+    <div class="root-element">
+      <div id="parent-element">
+        <p class="child-1">Child 1</p>
+        <p class="child-2">Child 2</p>
+        <p class="child-3">Child 3</p>
+      </div>
+    </div>
+    <!-- 
+    <label for="check-box"
+      ><input value="agree" type="checkbox" id="check-box" /> Đồng ý</label
+    > -->
+
+    <form id="todo-form">
+      <button id="submit-btn">Thêm</button>
+      <input
+        type="text"
+        placeholder="Bạn muốn làm gì hôm nay..."
+        class="input"
+        id="todo-input"
+      />
+    </form>
+
+    <ul id="todo-list"></ul>
+    <script src="./main.js"></script>
+  </body>
+</html>
