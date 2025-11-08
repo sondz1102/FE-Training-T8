@@ -109,7 +109,7 @@ console.log(prevElement);
 
 // Handle event
 const button = document.querySelector(".btn");
-console.log(button);
+// console.log(button);
 
 // attach event for button
 // button.onclick = function () {
@@ -139,24 +139,39 @@ console.log(button);
 //   }
 // });
 
-const todos = [
-  {
-    id: 1,
-    title: "Học React",
-    isCompleted: true,
-  },
-  {
-    id: 2,
-    title: "Học Redux",
-    isCompleted: false,
-  },
-];
+const todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+function saveToLocalStorage() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
 
 const todoForm = document.getElementById("todo-form");
 const todoList = document.getElementById("todo-list");
 const todoInput = document.getElementById("todo-input");
 const submitBtn = document.getElementById("submit-btn");
+const filtersTodo = document.querySelectorAll('input[name="filter"]');
 let editingIndex = -1;
+let currentFilter = "all";
+
+filtersTodo.forEach((radio) => {
+  radio.addEventListener("change", function () {
+    currentFilter = this.value;
+    render();
+  });
+});
+
+function getFilterTodos() {
+  switch (currentFilter) {
+    case "completed":
+      return todos.filter((todo) => todo.isCompleted);
+
+    case "pending":
+      return todos.filter((todo) => !todo.isCompleted);
+
+    default:
+      return todos;
+  }
+}
 
 todoForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -177,6 +192,7 @@ todoForm.addEventListener("submit", function (event) {
     });
   }
 
+  saveToLocalStorage();
   todoInput.value = "";
   todoInput.focus();
   render();
@@ -204,17 +220,20 @@ todoList.addEventListener("click", function (event) {
   if (target.classList.contains("delete-btn")) {
     if (confirm("Bạn có muốn xoá công việc này không")) {
       todos.splice(index, 1);
-      submitBtn.textContent = 'Thêm'
-      editingIndex = -1
-      todoInput.value = ''
+      submitBtn.textContent = "Thêm";
+      editingIndex = -1;
+      todoInput.value = "";
     }
   }
 
+  saveToLocalStorage();
   render();
 });
 
 function render() {
-  const htmls = todos
+  const filteredTodos = getFilterTodos();
+
+  const htmls = filteredTodos
     .map(
       (todo, index) => `
   <li data-id=${todo.id} data-index=${index} class="todo-item ${
@@ -234,10 +253,3 @@ function render() {
 }
 
 render();
-
-const select = document.getElementById("select");
-select.addEventListener("change", () => {
-  console.log(select.value);
-});
-
-// LocalStorage

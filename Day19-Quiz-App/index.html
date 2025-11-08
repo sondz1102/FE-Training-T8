@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App - JavaScript Cơ Bản</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="start-screen" class="screen">
+        <h1>JavaScript Quiz</h1>
+        <p>Kiểm tra kiến thức JavaScript</p>
+        <button id="start-btn" class="btn">Bắt đầu</button>
+      </div>
+
+      <div id="quiz-screen" class="screen hidden">
+        <div class="progress">
+          <span id="question-number">Câu 1 / 5</span>
+          <div class="progress-bar">
+            <div id="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="question-container">
+          <h2 id="question-text"></h2>
+          <ul id="options-container"></ul>
+        </div>
+
+        <button id="next-btn" class="btn hidden">Câu tiếp theo</button>
+      </div>
+
+      <div id="result-screen" class="screen hidden">
+        <h1>Kết quả</h1>
+        <div class="score">
+          <p>
+            Bạn đã trả lời đúng: <span id="score-text"></span> /
+            <span id="total-questions"></span>
+          </p>
+          <p id="score-percentage"></p>
+        </div>
+        <button id="restart-btn" class="btn">Làm lại</button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
